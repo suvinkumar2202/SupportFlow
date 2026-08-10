@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — SupportFlow</title>
+  <link rel="stylesheet" href="docs/assets/css/styles.css">
+  <script defer src="docs/assets/js/script.js"></script>
+</head>
+<body class="auth-page">
+  <header class="site-header small">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">SupportFlow</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="docs/index.html#about" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <h1>Sign in to SupportFlow</h1>
+      <form id="loginForm">
+        <label for="role">Login as</label>
+        <select id="role" name="role" class="input">
+          <option value="customer">Customer</option>
+          <option value="support">Support Staff</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" class="input" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" class="input" required>
+
+        <button type="submit" class="btn primary">Login</button>
+
+        <div class="auth-links">
+          <a href="#" class="muted">Forgot Password?</a>
+          <a href="#" class="muted">Don't have an account? Register</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container footer-inner">
+      <p>Need help? Contact your support team.</p>
+    </div>
+  </footer>
+</body>
+</html>
