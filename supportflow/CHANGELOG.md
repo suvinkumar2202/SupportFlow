@@ -1,0 +1,1 @@
+- Initial project structure and backend setup (2026-08-14)
