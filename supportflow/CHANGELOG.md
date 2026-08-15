@@ -1,1 +1,1 @@
-- Initial project structure and backend setup (2026-08-14)
+- Initial project structure and backend setup (2026-08-14)- Add Spring Security configuration (2026-08-15)
