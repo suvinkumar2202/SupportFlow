@@ -1,1 +1,1 @@
-- Initial project structure and backend setup (2026-08-14)- Add Spring Security configuration (2026-08-15)- Implement JWT authentication service (2026-08-16)- Create User entity and repository (2026-08-17)- Add login and register endpoints (2026-08-18)
+- Initial project structure and backend setup (2026-08-14)- Add Spring Security configuration (2026-08-15)- Implement JWT authentication service (2026-08-16)- Create User entity and repository (2026-08-17)- Add login and register endpoints (2026-08-18)- Implement password encryption with BCrypt (2026-08-19)
