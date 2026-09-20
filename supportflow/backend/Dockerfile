@@ -2,13 +2,13 @@ FROM eclipse-temurin:17-jdk-alpine AS builder
 
 WORKDIR /app
 
-COPY mvnw .
+COPY supportflow/backend/mvnw .
 
-COPY .mvn .mvn
+COPY supportflow/backend/.mvn .mvn
 
-COPY pom.xml .
+COPY supportflow/backend/pom.xml .
 
-COPY src src
+COPY supportflow/backend/src src
 
 RUN ./mvnw clean package -DskipTests
 
