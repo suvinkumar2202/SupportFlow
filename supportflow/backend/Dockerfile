@@ -10,6 +10,8 @@ COPY supportflow/backend/pom.xml .
 
 COPY supportflow/backend/src src
 
+RUN chmod +x mvnw
+
 RUN ./mvnw clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
