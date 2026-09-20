@@ -1,0 +1,13 @@
+(
+echo.
+echo # ---- Logs ----
+echo *.log
+echo.
+echo # ---- Frontend build ----
+echo frontend/dist/
+echo.
+echo # ---- Test data ----
+echo login.json
+echo register.json
+echo ticket.json
+) >> .gitignore

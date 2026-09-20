@@ -1,0 +1,32 @@
+# Environment / secrets
+.env
+*.env
+.env.local
+.env.*.local
+
+# Node dependencies
+**/node_modules/
+npm-debug.log*
+
+# Java / Maven
+**/target/
+*.class
+*.jar
+
+# Build files and logs
+**/dist/
+*.log
+
+# Test data
+login.json
+register.json
+ticket.json
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+**/*.db
+.kilo/
