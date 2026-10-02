@@ -1,13 +1,52 @@
-(
-echo.
-echo # ---- Logs ----
-echo *.log
-echo.
-echo # ---- Frontend build ----
-echo frontend/dist/
-echo.
-echo # ---- Test data ----
-echo login.json
-echo register.json
-echo ticket.json
-) >> .gitignore
+# Environment & Secrets
+.env
+*.env
+.env.local
+.env.*.local
+frontend/.env.local
+backend/.env
+
+# Node & Dependencies
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Java / Maven Build
+**/target/
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Frontend Build
+dist/
+**/dist/
+frontend/dist/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+supportflow.db
+backend/supportflow.db
+
+# Logs
+*.log
+**/logs/
+
+# Test data & payloads
+test-payloads/*.json
+login.json
+register.json
+ticket.json
+
+# IDE & OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+.kilo/

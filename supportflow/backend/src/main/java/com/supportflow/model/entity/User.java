@@ -24,11 +24,20 @@ public class User {
     @Convert(converter = RoleConverter.class)
     private Role role;
 
-    @Column(name = "created_at", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    // DATETIME rather than TIMESTAMP: avoids implicit timezone conversion and
+    // the MySQL restriction on multiple CURRENT_TIMESTAMP default columns.
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     // Constructors
     public User() {
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        if (createdAt == null) {
+            createdAt = LocalDateTime.now();
+        }
     }
 
     public User(String name, String email, String password, Role role) {

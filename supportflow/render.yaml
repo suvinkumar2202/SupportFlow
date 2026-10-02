@@ -11,5 +11,14 @@ services:
         generateValue: true
       - key: JWT_EXPIRATION
         value: "86400000"
-      - key: DB_PATH
-        value: "supportflow.db"
+      # MySQL connection. Set these as Render environment variables (or in a
+      # linked database) - never commit real credentials here.
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      # Frontend origins allowed by CORS, comma-separated.
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false

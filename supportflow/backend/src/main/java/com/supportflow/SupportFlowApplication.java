@@ -60,9 +60,15 @@ public class SupportFlowApplication {
 
         // Fallback: copy critical values from OS environment variables
         copyEnvIfMissing("JWT_SECRET");
-        copyEnvIfMissing("DB_PATH");
         copyEnvIfMissing("PORT");
         copyEnvIfMissing("JWT_EXPIRATION");
+        copyEnvIfMissing("DB_URL");
+        copyEnvIfMissing("DB_HOST");
+        copyEnvIfMissing("DB_PORT");
+        copyEnvIfMissing("DB_NAME");
+        copyEnvIfMissing("DB_USERNAME");
+        copyEnvIfMissing("DB_PASSWORD");
+        copyEnvIfMissing("CORS_ALLOWED_ORIGINS");
 
         if (!envLoaded) {
             System.err.println("WARNING: .env file not found. Relied on system environment variables.");

@@ -36,10 +36,13 @@ public class Ticket {
     @JoinColumn(name = "assigned_to")
     private User assignedTo;
 
-    @Column(name = "created_at", nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    // DATETIME rather than TIMESTAMP: avoids implicit timezone conversion and
+    // the MySQL restriction on multiple CURRENT_TIMESTAMP default columns.
+    // Values are maintained by @PrePersist / @PreUpdate below.
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     @Column(name = "resolved_at")

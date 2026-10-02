@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "name": "supportflow",
+      "path": "supportflow"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.kilo": true,
+      ".kilo": true,
+      "**/.vscode": true,
+      ".vscode": true
+    }
+  }
+}
+

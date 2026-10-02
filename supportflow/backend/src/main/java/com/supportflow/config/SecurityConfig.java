@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -67,20 +68,26 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
+    @Value("${app.cors.allowed-origins:http://localhost:5173}")
+    private String allowedOrigins;
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        List<String> origins = new ArrayList<>(Arrays.asList(
-            "http://localhost:5173",
-            "http://localhost:5174",
-            "http://localhost:3000",
-            "http://localhost:5000",
-            "http://localhost:8080",
-            "https://supportflow-frontend-sigma.vercel.app"
-        ));
+        // Origins come from app.cors.allowed-origins (comma-separated). To add
+        // the Vercel frontend later, set the CORS_ALLOWED_ORIGINS env var or
+        // extend the default in application.properties - no Java change needed.
+        List<String> origins = new ArrayList<>();
+        for (String origin : allowedOrigins.split(",")) {
+            String trimmed = origin.trim();
+            if (!trimmed.isEmpty()) {
+                origins.add(trimmed);
+            }
+        }
 
+        // Optional single extra origin supplied at runtime.
         String frontendUrl = System.getenv("FRONTEND_URL");
 
         if (frontendUrl != null && !frontendUrl.isBlank()) {
